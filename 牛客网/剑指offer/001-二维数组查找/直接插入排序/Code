@@ -1,24 +1,14 @@
-public static void Sort<T>(IList<T> arr) where T : IComparable<T>
+
+void InsertSort(int arr[],int len)
 {
-    if (arr == null)
-        throw new ArgumentNullException("arr");
- 
-    int length = arr.Count();
-    if (length > 1)
+    for (int i = 1; i < len; i++)
     {
-        int i, j, k;
- 
-        // 将arr分成有序区和无序区，初始有序区有一个元素
-        // 0-(i-1) 为有序区；i-(length-1)为无序区 （i从1开始）
-        for (i = 1; i < length; i++)
+        int get = arr[i];
+        int j = i - 1;
+        while (j >= 0 && arr[j] > get)
         {
-            T temp = arr[i];
-            // 边找位置边后移元素
-            for (j = i - 1; j >= 0 && arr[j].CompareTo(temp) > 0; j--)
-                arr[j + 1] = arr[j];    // 如果已排序的元素大于新元素，将该元素移到下一位置
- 
-            // 将 arr[i] 放到正确位置上  
-            arr[j + 1] = temp;
+            arr[j + 1] = arr[j];
+            j--;
         }
+        arr[j + 1] = get;
     }
-}
