@@ -1,0 +1,16 @@
+# -*- coding:utf-8 -*-
+class Solution:
+    # array 二维列表
+    def Find(self, target, array):
+        h = len(array)
+        w = len(array[0])
+        insert_x = w - 1
+        insert_y = 0
+        while insert_x >= 0 and insert_y < h:
+            if target < array[insert_y][insert_x]:
+                insert_x -= 1
+            elif target > array[insert_y][insert_x]:
+                insert_y += 1
+            else:
+                return True
+        return False
