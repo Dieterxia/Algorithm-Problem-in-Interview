@@ -1,0 +1,65 @@
+/// <summary>
+/// 二分查找插入排序
+/// </summary>
+public static void BinarySort<T>(IList<T> arr) where T : IComparable<T>
+{
+    if (arr == null)
+        throw new ArgumentNullException("arr");
+ 
+    int length = arr.Count();
+    if (length > 1)
+    {
+        int i, j, k;
+ 
+        // 将arr分成有序区和无序区，初始有序区有一个元素
+        // 0-(i-1) 为有序区；i-(length-1)为无序区
+        for (i = 1; i < length; i++)
+        {
+            // 二分查找在有序区寻找插入的位置 
+            int index = BinarySearchIndex<T>(arr, i - 1, arr[i]);
+ 
+            if (i != index)
+            {
+                T temp = arr[i];
+                // 后移元素，腾出arr[index]位置
+                for (j = i - 1; j >= index; j--)
+                    arr[j + 1] = arr[j];
+ 
+                // 将 arr[i] 放到正确位置上  
+                arr[index] = temp;
+            }
+        }
+    }
+}
+ 
+/// <summary>
+/// 二分查找要插入的位置得Index
+/// </summary>
+/// <param name="arr">数组</param>
+/// <param name="maxIndex">有序区最大索引</param>
+/// <param name="data">待插入值</param>
+/// <returns>插入的位置的Index</returns>
+private static int BinarySearchIndex<T>(IList<T> arr, int maxIndex, T data) where T : IComparable<T>
+{
+    int iBegin = 0;
+    int iEnd = maxIndex;
+    int middle = -1;
+ 
+    int insertIndex = -1;
+ 
+    while (iBegin <= iEnd)
+    {
+        middle = (iBegin + iEnd) / 2;
+        if (arr[middle].CompareTo(data) > 0)
+        {
+            iEnd = middle - 1;
+        }
+        else
+        {
+            // 如果是相同元素，也是插入在后面的位置
+            iBegin = middle + 1;
+        }
+    }
+ 
+    return iBegin;
+}
