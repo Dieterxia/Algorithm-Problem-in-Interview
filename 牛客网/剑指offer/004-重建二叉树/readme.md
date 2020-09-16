@@ -8,5 +8,7 @@
 3. 递归左右树
 
 ps. pyhton: 
+
 a = [1] len(a) 求长度
+
 a[2:3]->[], a[2]->error out of range
