@@ -1,0 +1,29 @@
+# -*- coding:utf-8 -*-
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+class Solution:
+    # 返回构造的TreeNode根节点
+    def reConstructBinaryTree(self, pre, tin):
+        # write code here
+        length = len(pre)
+        if not pre:
+            return None
+        root = TreeNode(pre[0])
+        # find idx of root in tin
+        for i in range(length):
+            if tin[i] == root.val:
+                root_in_idx = i
+                break
+                
+        # devide left and right tree for recurrent
+        pre_left = pre[1:i+1]
+        pre_right = pre[i+1:]
+        in_left = tin[:i]
+        in_right = tin[i+1:]
+        root.left = self.reConstructBinaryTree(pre_left, in_left)
+        root.right = self.reConstructBinaryTree(pre_right, in_right)
+        
+        return root
