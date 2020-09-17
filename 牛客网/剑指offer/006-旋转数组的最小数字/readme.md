@@ -10,4 +10,5 @@ NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。
 ### 主流思路：
 
 二分法查找（前提数据有序）：
-https://uploadfiles.nowcoder.com/images/20190819/807319133_1566217781994_E0D8DA4D79E73A35EB4365215E2F13BB
+![image](http://https://github.com/Dieterxia/Interview-algorithm-questions/牛客网/剑指offer
+/006-旋转数组的最小数字/二分法变种.jpg)
