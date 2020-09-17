@@ -1,0 +1,39 @@
+# -*- coding:utf-8 -*-
+class Solution:
+    def minNumberInRotateArray(self, rotateArray):
+        # write code here
+        if not rotateArray:
+            return 0
+        min = rotateArray[0]
+        length = len(rotateArray)
+        for i in range(length-1):
+            if rotateArray[length-i-1] < rotateArray[length-i-2]:
+                if min > rotateArray[length-i-1]:
+                    min = rotateArray[length-i-1]
+                else:
+                    break
+        return min
+        
+        
+# https://blog.nowcoder.net/n/dcb0f2e6ffd44e1895b7a5297e362778?f=comment       
+int minNumberInRotateArray(vector<int> rotateArray) {
+        if(rotateArray.empty())
+            return 0;
+ 
+        int low = 0;
+        int high = rotateArray.size() - 1;
+        int mid = 0;
+ 
+        while(low < high){
+            // 子数组是非递减的数组，10111
+            if (rotateArray[low] < rotateArray[high])
+                return rotateArray[low];
+            mid = low + (high - low) / 2;
+            if(rotateArray[mid] > rotateArray[low])
+                low = mid + 1;
+            else if(rotateArray[mid] < rotateArray[high])
+                high = mid;
+            else low++;
+        }
+        return rotateArray[low];
+    }
