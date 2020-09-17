@@ -10,5 +10,4 @@ NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。
 ### 主流思路：
 
 二分法查找（前提数据有序）：
-![image](http://https://github.com/Dieterxia/Interview-algorithm-questions/牛客网/剑指offer
-/006-旋转数组的最小数字/二分法变种.jpg)
+![image](http://https://github.com/Dieterxia/Interview-algorithm-questions/牛客网/剑指offer/006-旋转数组的最小数字/二分法变种.jpg)
