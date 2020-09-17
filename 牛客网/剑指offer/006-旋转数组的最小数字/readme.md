@@ -10,4 +10,7 @@ NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。
 ### 主流思路：
 
 二分法查找（前提数据有序）：
+
 ![image](https://github.com/Dieterxia/Interview-algorithm-questions/blob/master/%E7%89%9B%E5%AE%A2%E7%BD%91/%E5%89%91%E6%8C%87offer/006-%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97/%E4%BA%8C%E5%88%86%E6%B3%95%E5%8F%98%E7%A7%8D.png)
+
+(https://blog.nowcoder.net/n/dcb0f2e6ffd44e1895b7a5297e362778?f=comment)
