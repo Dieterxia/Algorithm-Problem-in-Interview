@@ -1,0 +1,24 @@
+# My solution
+import math
+
+class Solution:
+    def jumpFloor(self, number):
+        # write code here
+        def combination(n, m):
+            # turn combination select m form n
+            return math.factorial(n)/(math.factorial(n-m)*math.factorial(m))
+        count = 1
+        for i in range(int(number/2)):
+            count += combination(number-i-1, i+1)
+        return count
+        
+# General solution
+class Solution:
+    def jumpFloor(self, number):
+        # write code here
+        a = 1
+        b = 1
+        for i in range(number-1):
+            a = a + b
+            b = a - b
+        return a
