@@ -12,7 +12,8 @@ class Solution:
             count += combination(number-i-1, i+1)
         return count
         
-# General solution
+        
+# Other solution
 class Solution:
     def jumpFloor(self, number):
         # write code here
