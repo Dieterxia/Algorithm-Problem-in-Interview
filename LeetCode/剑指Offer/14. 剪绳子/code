@@ -1,0 +1,15 @@
+# 函数极值
+class Solution:
+    def cuttingRope(self, n: int) -> int:
+        if n <= 3:
+            return n-1
+        rest = [1, 4/3, 2]
+        return int(math.pow(3, n//3) * rest[n%3])
+
+# 动态规划
+class Solution:
+    def cuttingRope(self, n: int) -> int:
+        product_list = [1, 1]
+        for i in range(2, n+1):
+            product_list.append(max([max(product_list[i-j], i-j)*max(product_list[j], j) for j in range(1, i//2+1 if i%2==0 else i//2+2)]))
+        return product_list[n]
