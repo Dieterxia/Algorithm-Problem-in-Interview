@@ -14,3 +14,13 @@
 
 ### 动态规划
 * 将每一个小于n的最大值算出，然后将n分成两部分遍历相乘取最大。
+
+# 二
+## 描述
+数值太大超出边界，结果只能取模1e9+7
+
+##思路
+* https://leetcode-cn.com/problems/jian-sheng-zi-ii-lcof/solution/mian-shi-ti-14-ii-jian-sheng-zi-iitan-xin-er-fen-f/
+* 直接用结果取模无用，因为结果以超限
+* ![](http://latex.codecogs.com/gif.latex?(xy)%p=[(x%p)(y%p)]%p)
+* 不可用中途用除法再取模
