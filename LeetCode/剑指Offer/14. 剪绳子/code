@@ -13,3 +13,16 @@ class Solution:
         for i in range(2, n+1):
             product_list.append(max([max(product_list[i-j], i-j)*max(product_list[j], j) for j in range(1, i//2+1 if i%2==0 else i//2+2)]))
         return product_list[n]
+
+# 超边界，取模
+class Solution:
+    def cuttingRope(self, n: int) -> int:
+        if n <= 3:
+            return n-1
+        rest = [1, 4/3, 2]
+        a, b, rem, x, p = n//3-1, n%3, 1, 3, 1000000007
+        while a > 0:
+            if a % 2: rem = (rem*x)%p
+            x = x**2%p
+            a //= 2
+        return int((rem * 3 * rest[b]) % p)
